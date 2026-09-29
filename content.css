@@ -1,0 +1,62 @@
+/*
+ * Colours come from Cardmarket's Bootstrap theme variables, so the row follows
+ * light and dark mode (data-bs-theme) automatically. Fallbacks are the light theme.
+ */
+#StatusTable .cmt-total {
+	--cmt-accent: var(--bs-primary, #012169);
+	--cmt-bg: var(--bs-body-bg, #fff);
+	--cmt-text: var(--bs-body-color, #212529);
+	--cmt-muted: var(--bs-secondary-color, #555);
+
+	align-items: center;
+	padding-block: 6px;
+	border-top: 2px solid var(--cmt-accent);
+	background: color-mix(in srgb, var(--cmt-accent) 8%, var(--cmt-bg));
+	color: var(--cmt-text);
+	font-weight: bold;
+	cursor: default;
+}
+
+/* Cardmarket's striped-table styles give every element inside a row its own background. */
+#StatusTable .cmt-total * {
+	background: transparent;
+}
+
+#StatusTable .cmt-total > * {
+	display: flex;
+}
+
+#StatusTable .cmt-label-cell {
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px;
+	padding-inline: 8px;
+}
+
+.cmt-actions {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: normal;
+}
+
+#StatusTable .cmt-total .cmt-button {
+	padding: 2px 10px;
+	border: 1px solid var(--cmt-accent);
+	border-radius: 4px;
+	background: var(--cmt-bg);
+	color: var(--cmt-accent);
+	font-size: 0.85em;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#StatusTable .cmt-total .cmt-button:hover {
+	background: var(--cmt-accent);
+	color: var(--cmt-bg);
+}
+
+.cmt-status {
+	color: var(--cmt-muted);
+	font-size: 0.85em;
+}

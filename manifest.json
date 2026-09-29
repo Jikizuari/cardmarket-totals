@@ -1,0 +1,23 @@
+{
+	"manifest_version": 3,
+	"name": "Cardmarket Totalen",
+	"version": "1.0.0",
+	"description": "Toont totalen (zendingen, artikelen, bedrag) onder de order-overzichten van Cardmarket.",
+	"icons": {
+		"16": "icons/icon-16.png",
+		"32": "icons/icon-32.png",
+		"48": "icons/icon-48.png",
+		"128": "icons/icon-128.png"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://www.cardmarket.com/*/*/Orders/Sales/*",
+				"https://www.cardmarket.com/*/*/Orders/Purchases/*"
+			],
+			"js": ["src/parse.js", "src/table.js", "src/content.js"],
+			"css": ["content.css"],
+			"run_at": "document_idle"
+		}
+	]
+}
